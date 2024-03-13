@@ -1,12 +1,13 @@
-import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import MainRoutes from "./routes";
 import Menu from "./components/Menu";
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
       <Menu />
-      <h1 className="bg-primary">Olá</h1>
-    </div>
+      <MainRoutes />
+    </BrowserRouter>
   );
 }
 
