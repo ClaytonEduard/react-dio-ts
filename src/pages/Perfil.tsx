@@ -1,7 +1,10 @@
-export const Perfil = () => {
+import { Layout } from "../components/Layout/Layout";
+const Perfil = () => {
   return (
-    <div>
+    <Layout>
       <h1>Perfil</h1>
-    </div>
+    </Layout>
   );
 };
+
+export default Perfil;

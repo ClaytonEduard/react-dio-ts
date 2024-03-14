@@ -1,7 +1,10 @@
-export const Home = () => {
+import { Layout } from "../components/Layout/Layout";
+
+const Home = () => {
   return (
-    <div>
-      <h1>Ola</h1>
-    </div>
+    <Layout>
+      <h1>Home page</h1>
+    </Layout>
   );
 };
+export default Home;
