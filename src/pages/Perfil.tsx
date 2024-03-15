@@ -3,9 +3,8 @@ import { Table } from "../components/Table/Table";
 const Perfil = () => {
   return (
     <Layout>
-      <Table data={[]} />
+      <Table />
     </Layout>
   );
 };
-
 export default Perfil;

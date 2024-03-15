@@ -24,4 +24,10 @@ describe("Table", () => {
     //expect(screen.getByText("React")).toBeInTheDocument();
     //expect(screen.getByText("Frontend")).toBeInTheDocument();
   });
+
+  it("Deve renderizar a tabela, caso não receba dados", () => {
+    render(<Table />);
+
+    expect(screen.getAllByRole("row")).toHaveLength(1);
+  });
 });
