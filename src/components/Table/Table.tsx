@@ -1,6 +1,15 @@
 import React from "react";
 
-export const Table = () => {
+interface ITech {
+  tech: string;
+  tipo: string;
+}
+
+interface ITable {
+  data: ITech[];
+}
+
+export const Table = ({ data }: ITable) => {
   return (
     <table className="table table-striped">
       <thead>
@@ -10,10 +19,14 @@ export const Table = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>React</td>
-          <td>Frontend</td>
-        </tr>
+        {data.map((tech, index) => {
+          return (
+            <tr key={index}>
+              <td>{tech.tech}</td>
+              <td>{tech.tipo}</td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
