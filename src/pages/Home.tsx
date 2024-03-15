@@ -1,6 +1,19 @@
+import { MouseEvent } from "react";
 import { Layout } from "../components/Layout/Layout";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  //* instanciar o useHistory
+  //?  no curso esta usando useHistory no entanto a partir da  react-router-dom v6  ele nao pertence ao react-router-dom, assim utiliza o navigate
+
+  const history = useNavigate();
+
+  // funcao de redirecionamento
+  const handleClick = async (event: MouseEvent) => {
+    event.preventDefault();
+    history("/perfil");
+  };
+
   return (
     <Layout>
       <div className="col-4 m-auto">
@@ -19,7 +32,7 @@ const Home = () => {
             Informe seu usuário do gitHub
           </div>
         </div>
-        <button type="button" className="btn btn-primary">
+        <button onClick={handleClick} type="button" className="btn btn-primary">
           Entrar
         </button>
       </div>
