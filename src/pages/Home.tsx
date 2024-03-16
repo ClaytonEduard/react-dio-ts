@@ -1,8 +1,10 @@
-import { MouseEvent } from "react";
+import { MouseEvent, useState } from "react";
 import { Layout } from "../components/Layout/Layout";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const [user, setUser] = useState("");
+
   //* instanciar o useHistory
   //?  no curso esta usando useHistory no entanto a partir da  react-router-dom v6  ele nao pertence ao react-router-dom, assim utiliza o navigate
 
@@ -11,6 +13,9 @@ const Home = () => {
   // funcao de redirecionamento
   const handleClick = async (event: MouseEvent) => {
     event.preventDefault();
+    if (user.length === 0) {
+      return alert("Por favor informe um usuário");
+    }
     history("/perfil");
   };
 
@@ -26,7 +31,10 @@ const Home = () => {
             type="text"
             className="form-control"
             id="gitUser"
+            aria-label="User"
             aria-describedby="userHelp"
+            value={user}
+            onChange={(e) => setUser(e.target.value)}
           />
           <div id="userHelp" className="form-text">
             Informe seu usuário do gitHub
