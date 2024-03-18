@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Home from "./Home";
+import gitApi from "../api/github";
 
 //?  no curso esta usando useHistory no entanto a partir da  react-router-dom v6  ele nao pertence ao react-router-dom, assim utiliza o navigate, e tambem tive que usar o MemoryRouter no lugar do BrwoserRouter
 
@@ -12,8 +13,9 @@ jest.mock("react-router-dom", () => ({
 }));
 
 describe("Home", () => {
-  it("Deve informar o usuário e ser redirecionado para a página de perfil", () => {
-    const user = "clayton";
+  it("Deve informar o usuário e ser redirecionado para a página de perfil", async () => {
+    gitApi.getUser = jest.fn().mockReturnValue({ login: "ClaytonEduard" });
+    const user = "ClaytonEduard";
     render(
       <MemoryRouter>
         <Home />
@@ -29,7 +31,7 @@ describe("Home", () => {
     fireEvent.change(input, { target: { value: user } });
 
     fireEvent.click(btn);
-    expect(mockNavigate).toHaveBeenCalledWith(`/${user}`);
+    expect(gitApi.getUser).toHaveBeenCalledWith(user);
   });
 
   it("Não deve redirecionar para a pagina de perfil, caso o usuário não seja informado", () => {
