@@ -7,7 +7,7 @@ const MainRoutes = () => {
   return (
     <Routes>
       <Route path="/" Component={Home} />
-      <Route path="/perfil" Component={Perfil} />
+      <Route path="/:user" Component={Perfil} />
     </Routes>
   );
 };

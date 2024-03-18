@@ -16,7 +16,7 @@ const Home = () => {
     if (user.length === 0) {
       return alert("Por favor informe um usuário");
     }
-    history("/perfil");
+    history(`/${user}`);
   };
 
   return (

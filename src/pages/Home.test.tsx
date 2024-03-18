@@ -13,6 +13,7 @@ jest.mock("react-router-dom", () => ({
 
 describe("Home", () => {
   it("Deve informar o usuário e ser redirecionado para a página de perfil", () => {
+    const user = "clayton";
     render(
       <MemoryRouter>
         <Home />
@@ -25,10 +26,10 @@ describe("Home", () => {
 
     const btn = screen.getByRole("button", { name: "Entrar" });
 
-    fireEvent.change(input, { target: { value: "usuario" } });
+    fireEvent.change(input, { target: { value: user } });
 
     fireEvent.click(btn);
-    expect(mockNavigate).toHaveBeenCalledWith("/perfil");
+    expect(mockNavigate).toHaveBeenCalledWith(`/${user}`);
   });
 
   it("Não deve redirecionar para a pagina de perfil, caso o usuário não seja informado", () => {
