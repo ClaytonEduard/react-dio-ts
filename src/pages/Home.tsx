@@ -26,7 +26,6 @@ const Home = () => {
       .getUser(user)
       .then((response) => history(`/${response.login}`))
       .catch((error) => {
-        console.log();
         setInvalid(true);
       });
   };
