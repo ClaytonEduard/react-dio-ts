@@ -1,3 +1,14 @@
+# Projeto de ensino da DIO,  React com typescript 
+ Como consumir a api do github, trando os dados e realizando testes unitarios
+
+ ![image](https://github.com/ClaytonEduard/react-dio-ts/assets/11823640/bfa120c7-0356-4c58-afdc-ab3434bde4f6)
+
+![image](https://github.com/ClaytonEduard/react-dio-ts/assets/11823640/674c3953-5004-4797-b009-bbf21a085c94)
+
+Para testar, clone o projeto e use os passos abaixo.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
